@@ -17,7 +17,9 @@ struct Plataforma{
     var icono: String
 }
 
-struct InformacionSerie{
+struct InformacionSerie: Identifiable{
+    var id: InformacionSerie = .self
+    
     var nombre: String
     var tipo: String
     

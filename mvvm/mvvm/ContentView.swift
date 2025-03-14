@@ -12,9 +12,9 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-           /* ForEach(controlador.series_registradas){_ in
+           ForEach(controlador.series_registradas){serie in
                 Image(systemName: "plus")
-            }*/
+            }
         }
         .padding()
         

@@ -9,20 +9,30 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(VistaModeloBasico.self) private var controlador
+    @State var mostrar_agregar_serie: Bool = false
     
     var body: some View {
-        VStack {
-           ForEach(controlador.series_registradas){serie in
-                Image(systemName: "plus")
+        if !mostrar_agregar_serie{
+            ScrollView{
+                VStack {
+                    ForEach(controlador.series_registradas){serie in
+                        Image(systemName: "plus")
+                    }
+                }
+                .padding()
+            }
+            Spacer()
+            
+            Button("Agrega una serie de prueba"){
+                mostrar_agregar_serie = true
             }
         }
-        .padding()
-        
-        Button("Agrega una serie de prueba"){
-            controlador.agregar_serie()
+        else{
+            AgregarSerie()
         }
     }
 }
+
 
 #Preview {
     ContentView()

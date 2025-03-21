@@ -11,21 +11,9 @@ struct ContentView: View {
     @Environment(VistaModeloBasico.self) private var controlador
     @State var mostrar_agregar_serie: Bool = false
     
-    var body: some View {
-        if !mostrar_agregar_serie{
-            ScrollView{
-                VStack {
-                    ForEach(controlador.series_registradas){serie in
-                        Image(systemName: "plus")
-                    }
-                }
-                .padding()
-            }
-            Spacer()
-            
-            Button("Agrega una serie de prueba"){
-                mostrar_agregar_serie = true
-            }
+    var body: some View { //DEUDA TECNICA
+        if controlador.estado_actual_de_ka_aplicacion == .mostrando_series{
+            MenuPrincipalSeries()
         }
         else{
             AgregarSerie()

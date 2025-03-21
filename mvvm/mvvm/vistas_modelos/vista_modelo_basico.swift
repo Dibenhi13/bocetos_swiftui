@@ -23,6 +23,10 @@ class VistaModeloBasico{
         else{
             series_registradas.append(InformacionSerie(nombre: "prueba", tipo: "prueba", fecha_estreno: 2017, sinopsis: "sinopsis lol", caratula: "imagen_fake"))
         }
+        estado_actual_de_ka_aplicacion = .mostrando_series //aqui cambiamos a la pantalla de mostrar series
         return true
+    }
+    func cambiar_a_agregar_serie() -> Void{
+        estado_actual_de_ka_aplicacion = .agregando_series
     }
 }
